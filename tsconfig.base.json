@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@marvel-cinema/api-gateway/util-type": [
+        "api-gateway/util-type/src/index.ts"
+      ],
+      "@marvel-cinema/client/graphql": ["client/graphql/src/index.ts"],
+      "@marvel-cinema/client/ui-shared": ["client/ui-shared/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

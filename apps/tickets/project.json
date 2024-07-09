@@ -1,0 +1,56 @@
+{
+  "name": "tickets",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/tickets/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/tickets",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/tickets/src/main.ts",
+        "tsConfig": "apps/tickets/tsconfig.app.json",
+        "assets": ["apps/tickets/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "tickets:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "tickets:build:development"
+        },
+        "production": {
+          "buildTarget": "tickets:build:production"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "api-gateway-util-type",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "api-gateway/util-type/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project api-gateway-util-type --web",
+  "targets": {}
+}
